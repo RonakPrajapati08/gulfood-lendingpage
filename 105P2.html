@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulfood 2027 | Luxury Exhibition Stand Builder</title>
+
+    <!-- Bootstrap 5 -->
+
+
+</head>
+
+<body>
+
+    <!-- 
+    CSS STYLES - To be placed in your <head> or at the top of the body 
+-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #6366F1;
+            --secondary-color: #14B8A6;
+            --dark-gray: #1F2937;
+            --bg-light: #F8FAFF;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* Typography & Buttons */
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: white;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #4f46e5;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-secondary-custom {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(31, 41, 55, 0.45);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 100px 0;
+        }
+
+        .bg-soft-gray {
+            background-color: #F5F7FA;
+        }
+
+        .ls-2 {
+            letter-spacing: 1.5px;
+        }
+
+        .stat-card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.1) !important;
+        }
+
+        .text-dark-blue {
+            color: #0F172A;
+        }
+
+        /* Cards */
+        .feature-card {
+            background: var(--white);
+            border: none;
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Benefits List */
+        .benefits-section {
+            background: linear-gradient(135deg, #F8FAFF 0%, #E0E7FF 100%);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .benefit-item i {
+            color: var(--secondary-color);
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        /* Gallery */
+        .gallery-img {
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            height: 250px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .gallery-img:hover {
+            filter: brightness(0.8);
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 10px;
+        }
+
+        /* Pricing */
+        .pricing-card {
+            border: 2px solid transparent;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-color);
+        }
+
+        /* Forms */
+        .form-control {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #E5E7EB;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.1);
+        }
+
+        /* Animation classes */
+        .fade-up {
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        :root {
+            --dark-navy: #0F172A;
+            /* ઈમેજ મુજબનો ડાર્ક કલર */
+            --light-grey: #E2E8F0;
+            --text-muted: #64748B;
+        }
+
+        .journey-section {
+            /* background-color: #FDFDFD; */
+            background-color: rgba(250, 249, 246, 0.56);
+            /* ઈમેજ જેવું ઓફ-વ્હાઈટ બેકગ્રાઉન્ડ */
+            padding: 100px 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ટાઈટલ ફોન્ટ સ્ટાઈલ */
+        .boutique-heading {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-navy);
+            font-size: 42px;
+            font-weight: 500;
+        }
+
+        .boutique-sub {
+            letter-spacing: 4px;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 60px 0;
+        }
+
+        /* સેન્ટર લાઇન (Grey Background) */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1.5px;
+            height: 100%;
+            background: var(--light-grey);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* પ્રોગ્રેસ લાઇન (જે સ્ક્રૉલ સાથે Fill થશે) */
+        .timeline-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1.5px;
+            height: 0%;
+            background: var(--dark-navy);
+            transform: translateX(-50%);
+            z-index: 1;
+            transition: height 0.1s linear;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* નંબર સર્કલ (ઈમેજ મુજબની સ્ટાઈલ) */
+        .timeline-number {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 48px;
+            height: 48px;
+            background-color: #fff;
+            color: var(--dark-navy);
+            border: 1px solid var(--light-grey);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            z-index: 3;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 0 8px #FDFDFD;
+            /* વ્હાઈટ ગેપ આપવા માટે */
+        }
+
+        /* એક્ટિવ નંબર (Dark Fill) */
+        .timeline-number.active {
+            background-color: var(--dark-navy);
+            color: white;
+            border-color: var(--dark-navy);
+        }
+
+        /* સાઇડ-બાય-સાઇડ કોલમ્સ */
+        .timeline-col {
+            width: 45%;
+        }
+
+        .timeline-img-side img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        /* કાર્ડ સ્ટાઈલ (Clean White) */
+        .timeline-card {
+            background: #FFFFFF;
+            width: 100%;
+            max-width: 580px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            opacity: 0.3;
+            /* Inactive કાર્ડ ઝાંખા રહેશે */
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.active-item .timeline-card {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ડાબે-જમણે પોઝિશનિંગ */
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* કાર્ડ ટેક્સ્ટ સ્ટાઈલ (ઈમેજ મુજબ) */
+        .timeline-label {
+            color: #94A3B8;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            /* ઈમેજ મુજબ ઈટાલિક */
+            color: var(--dark-navy);
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 1024px) {
+
+            .timeline-card {
+                max-width: 420px;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .timeline-container::before,
+            .timeline-progress-bar {
+                left: 20px;
+                transform: none;
+            }
+
+            .timeline-number {
+                left: 20px;
+                transform: none;
+                width: 40px;
+                height: 40px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: flex-start;
+                padding-left: 60px;
+            }
+
+            .timeline-col {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .timeline-card {
+                max-width: 100%;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 fade-up">
+                    <span class="badge bg-info mb-3 px-3 py-2">Dubai • Feb 2027</span>
+                    <h1 class="display-3 mb-4">GulfFood 2027 Dubai – Your Gateway to Global Trade</h1>
+                    <p class="lead mb-5 opacity-90">Join us to explore the world’s largest food & beverage exhibition
+                        with expert export guidance, supplier meetings, and full Dubai tour support.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="#register" class="btn btn-primary-custom btn-lg">Register for GulfFood Tour</a>
+                        <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal"
+                            data-bs-target="#videoModal">
+                            <i class="fas fa-play-circle me-2"></i> Watch Event Video
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GulfFood Preview"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <section class="bg-soft-gray py-5 py-lg-5">
+        <div class="container py-4">
+
+            <!-- 1. Section Header -->
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <span class="text-primary fw-bold small text-uppercase ls-2 d-block mb-2" data-aos="fade-up">
+                        Global Exposure & Trade Opportunities
+                    </span>
+                    <h2 class="text-dark-blue fw-bold mb-3 display-6" data-aos="fade-up" data-aos-delay="100">
+                        Gulfood Trade Fair – Expanding Your Global Business Reach
+                    </h2>
+                    <p class="text-muted lh-lg mb-0" data-aos="fade-up" data-aos-delay="200">
+                        Gulfood is not just an exhibition; it is the ultimate gateway for global trade. We help you
+                        showcase your brand to international decision-makers and expand your business horizons across
+                        borders.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Content Area (2 Column) -->
+            <div class="row align-items-center mb-5 g-4">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="./12.svg" alt="Exhibition Global Reach" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+                        <h4 class="fw-bold mb-3 text-dark-blue">The Strategic Importance of Gulfood</h4>
+                        <p class="text-muted mb-4 lh-base">
+                            Participating in Gulfood places your brand at the center of the world's most influential F&B
+                            sourcing hub. It is where global buyers and suppliers meet to sign massive contracts.
+                        </p>
+
+                        <!-- 4. Value Points -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                                    <p class="fw-semibold text-dark-blue mb-0 small">Direct access to verified global
+                                        buyers</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                                    <p class="fw-semibold text-dark-blue mb-0 small">Strong B2B networking opportunities
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                                    <p class="fw-semibold text-dark-blue mb-0 small">Market trend & product insights</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-start">
+                                    <i class="fas fa-check-circle text-success mt-1 me-2"></i>
+                                    <p class="fw-semibold text-dark-blue mb-0 small">Long-term export & brand growth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Stats Info Cards Grid -->
+            <div class="row g-3 g-lg-4 justify-content-center">
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bg-white p-4 rounded-3 text-center h-100 shadow-sm stat-card-hover">
+                        <i class="fas fa-globe-americas text-primary fs-3 mb-3"></i>
+                        <span class="d-block fs-3 fw-bold text-primary">195+</span>
+                        <span class="text-muted small fw-medium">Countries Participating</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bg-white p-4 rounded-3 text-center h-100 shadow-sm stat-card-hover">
+                        <i class="fas fa-briefcase text-primary fs-3 mb-3"></i>
+                        <span class="d-block fs-3 fw-bold text-primary">5,000+</span>
+                        <span class="text-muted small fw-medium">Global Exhibitors</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="bg-white p-4 rounded-3 text-center h-100 shadow-sm stat-card-hover">
+                        <i class="fas fa-users text-primary fs-3 mb-3"></i>
+                        <span class="d-block fs-3 fw-bold text-primary">100,000+</span>
+                        <span class="text-muted small fw-medium">Trade Visitors</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="bg-white p-4 rounded-3 text-center h-100 shadow-sm stat-card-hover">
+                        <i class="fas fa-boxes text-primary fs-3 mb-3"></i>
+                        <span class="d-block fs-3 fw-bold text-primary">150+</span>
+                        <span class="text-muted small fw-medium">Product Categories</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. WHY VISIT GULFOOD WITH US -->
+    <section class="journey-section">
+        <div class="container">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase tracking-wider">Your Business Journey</h6>
+                <h2 class="boutique-heading">Why Visit Gulfood 2027 With Us?</h2>
+                <p class="boutique-sub">
+                    A guided export–import experience designed to convert global opportunities into real business
+                    growth.
+                </p>
+            </div>
+
+            <div class="timeline-container" id="timelineContainer">
+                <div class="timeline-progress-bar" id="progressBar"></div>
+
+                <!-- Step 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-col timeline-img-side">
+                        <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?w=900"
+                            alt="Global Market Exposure">
+                    </div>
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">GLOBAL EXPOSURE</span>
+                        <h4 class="timeline-title">International Market Exposure</h4>
+                        <p class="text-muted small mb-0">
+                            Explore the world’s largest food and beverage exhibition and connect with global brands,
+                            manufacturers, and buyers from over 120 countries at Gulfood Dubai.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-col timeline-img-side">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900"
+                            alt="Verified Suppliers">
+                    </div>
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">SUPPLIER TRUST</span>
+                        <h4 class="timeline-title">Verified Global Suppliers</h4>
+                        <p class="text-muted small mb-0">
+                            Meet genuine, pre-verified international manufacturers and exporters suitable for
+                            import, export, distribution, and private-label business opportunities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-col timeline-img-side">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900"
+                            alt="Export Strategy">
+                    </div>
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">EXPORT STRATEGY</span>
+                        <h4 class="timeline-title">Product & Market Guidance</h4>
+                        <p class="text-muted small mb-0">
+                            Our export experts help you identify high-demand products, target markets,
+                            pricing strategies, and packaging standards before you finalize deals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-col timeline-img-side">
+                        <img src="https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?w=900"
+                            alt="Dubai Support">
+                    </div>
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">ON-GROUND SUPPORT</span>
+                        <h4 class="timeline-title">Complete Dubai On-Ground Support</h4>
+                        <p class="text-muted small mb-0">
+                            From airport pickup and exhibition guidance to translators and local coordination,
+                            our team ensures a smooth and stress-free Gulfood visit.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-item">
+                    <div class="timeline-col timeline-img-side">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900"
+                            alt="Business Networking">
+                    </div>
+                    <div class="timeline-number">05</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">NETWORKING</span>
+                        <h4 class="timeline-title">High-Value Business Networking</h4>
+                        <p class="text-muted small mb-0">
+                            Build strong relationships with international buyers, distributors,
+                            and exporters through focused B2B meetings and networking opportunities.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="timeline-item">
+                    <div class="timeline-col timeline-img-side">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900"
+                            alt="Post Event Support">
+                    </div>
+                    <div class="timeline-number">06</div>
+                    <div class="timeline-card">
+                        <span class="timeline-label">POST EVENT</span>
+                        <h4 class="timeline-title">Long-Term Export Support</h4>
+                        <p class="text-muted small mb-0">
+                            Even after Gulfood, we assist you with follow-ups, negotiations,
+                            export documentation, logistics planning, and shipment execution.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. WHAT YOU WILL GAIN -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <h2 class="mb-4">Unlock New Business Horizons</h2>
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Meet global manufacturers & buyers
+                    </div>
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Discover trending food & FMCG products
+                    </div>
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Learn export pricing & packaging
+                        standards</div>
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Understand global demand & compliance
+                    </div>
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Build international business
+                        connections</div>
+                </div>
+                <div class="col-lg-7">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000"
+                        class="img-fluid rounded-4 shadow" alt="Success">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. EVENT VISIT & STAY DETAILS -->
+    <section>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="text-center p-4 border rounded-4 bg-white">
+                        <i class="fas fa-calendar-alt fa-2x text-primary mb-3"></i>
+                        <h6>Event</h6>
+                        <p class="mb-0 fw-bold">GulfFood 2027</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center p-4 border rounded-4 bg-white">
+                        <i class="fas fa-map-marked-alt fa-2x text-primary mb-3"></i>
+                        <h6>Location</h6>
+                        <p class="mb-0 fw-bold">DWTC, Dubai</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center p-4 border rounded-4 bg-white">
+                        <i class="fas fa-clock fa-2x text-primary mb-3"></i>
+                        <h6>Duration</h6>
+                        <p class="mb-0 fw-bold">5-Day Guided Visit</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center p-4 border rounded-4 bg-white">
+                        <i class="fas fa-concierge-bell fa-2x text-primary mb-3"></i>
+                        <h6>Included</h6>
+                        <p class="mb-0 fw-bold">Entry & VIP Meetings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. IMAGE GALLERY -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Experience the Energy</h2>
+            <div class="row g-3">
+                <div class="col-md-4 col-6"><img
+                        src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=600"
+                        class="w-100 gallery-img" alt="1"></div>
+                <div class="col-md-4 col-6"><img
+                        src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=600"
+                        class="w-100 gallery-img" alt="2"></div>
+                <div class="col-md-4 col-6"><img
+                        src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&q=80&w=600"
+                        class="w-100 gallery-img" alt="3"></div>
+                <div class="col-md-6 col-6"><img
+                        src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&q=80&w=800"
+                        class="w-100 gallery-img" alt="4"></div>
+                <div class="col-md-6 col-12"><img
+                        src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&q=80&w=800"
+                        class="w-100 gallery-img" alt="5"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. VIDEO EXPERIENCE SECTION -->
+    <section class="benefits-section">
+        <div class="container text-center">
+            <h2 class="mb-5">Insights From the Field</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Inside GulfFood"></iframe>
+                        </div>
+                        <div class="p-3">
+                            <h6>Inside GulfFood Exhibition</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Networking"></iframe>
+                        </div>
+                        <div class="p-3">
+                            <h6>Business Networking Experience</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Opportunities"></iframe>
+                        </div>
+                        <div class="p-3">
+                            <h6>Global Trade Opportunities</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. TESTIMONIALS -->
+    <section class="bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Trusted by Business Leaders</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card shadow-sm text-center mx-auto" style="max-width: 800px;">
+                            <p class="lead italic mb-4">"The team didn't just show us the booths; they introduced us to
+                                the CEOs we needed to meet. Our export volume tripled within six months of the tour."
+                            </p>
+                            <h6 class="mb-0">Sarah Jenkins</h6>
+                            <small class="text-muted">CEO, AgriFlow Systems | United Kingdom</small>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card shadow-sm text-center mx-auto" style="max-width: 800px;">
+                            <p class="lead italic mb-4">"Navigating Dubai World Trade Centre alone is impossible. With
+                                their support, we secured three major distribution contracts for our FMCG line."</p>
+                            <h6 class="mb-0">Ahmed Al-Sayed</h6>
+                            <small class="text-muted">Director, Al-Futtaim Trading | Egypt</small>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. TOUR PACKAGES -->
+    <section>
+        <div class="container">
+            <h2 class="text-center mb-5">Choose Your Experience</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="feature-card pricing-card text-center">
+                        <h3>Starter Visit</h3>
+                        <p class="text-muted">Ideal for new explorers</p>
+                        <hr>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-2">Exhibition Entry Pass</li>
+                            <li class="mb-2">Group Guided Tour</li>
+                            <li class="mb-2">Market Overview Report</li>
+                        </ul>
+                        <a href="#register" class="btn btn-outline-primary w-100">Select Package</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card pricing-card featured text-center">
+                        <span class="badge bg-primary mb-2">MOST POPULAR</span>
+                        <h3>Business Growth</h3>
+                        <p class="text-muted">For expanding trade</p>
+                        <hr>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-2">VIP Entry & Lounge Access</li>
+                            <li class="mb-2">3 Pre-arranged B2B Meetings</li>
+                            <li class="mb-2">Product Sourcing Assistance</li>
+                            <li class="mb-2">Networking Dinner</li>
+                        </ul>
+                        <a href="#register" class="btn btn-primary-custom w-100">Select Package</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-card pricing-card text-center">
+                        <h3>Premium Trade Access</h3>
+                        <p class="text-muted">High-level partnership</p>
+                        <hr>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-2">Personal Trade Consultant</li>
+                            <li class="mb-2">Unlimited B2B Matchmaking</li>
+                            <li class="mb-2">Company Setup Consultation</li>
+                            <li class="mb-2">Private Chauffeur Service</li>
+                        </ul>
+                        <a href="#register" class="btn btn-outline-primary w-100">Select Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. QUICK REGISTRATION SECTION -->
+    <section id="register" class="bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="feature-card shadow p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="mb-2">Reserve My GulfFood Visit</h2>
+                            <p class="text-danger fw-bold">Limited Seats Available for 2027 Mission</p>
+                        </div>
+                        <form id="registrationForm" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" required placeholder="John Doe">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Mobile Number</label>
+                                    <input type="tel" class="form-control" required placeholder="+1 234 567 890">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" required placeholder="john@company.com">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Company Name</label>
+                                    <input type="text" class="form-control" required placeholder="Global Traders Ltd">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Product Interest</label>
+                                    <select class="form-select form-control">
+                                        <option selected disabled>Choose a category...</option>
+                                        <option>Organic & Wellness</option>
+                                        <option>Meat & Poultry</option>
+                                        <option>Grains & Cereals</option>
+                                        <option>FMCG / Packaged Goods</option>
+                                        <option>Beverages</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary-custom w-100 py-3">Reserve My GulfFood
+                                        Visit</button>
+                                    <p class="text-center mt-3 small text-muted"><i class="fas fa-shield-alt me-1"></i>
+                                        Your data is secure and will be handled by our expert consultants.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. FINAL CTA SECTION -->
+    <section class="py-5" style="background-color: var(--dark-gray);">
+        <div class="container text-center py-5">
+            <h2 class="text-white display-5 mb-4">Turn GulfFood 2027 into Your Global Business Breakthrough</h2>
+            <a href="#register" class="btn btn-secondary-custom btn-lg px-5 py-3">Register Now</a>
+        </div>
+    </section>
+
+    <!-- 
+    SCRIPTS 
+-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form Validation & Smooth Scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('registrationForm');
+
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    event.preventDefault();
+                    alert('Thank you! Our Export-Import consultant will contact you within 24 hours.');
+                    form.reset();
+                }
+                form.classList.add('was-validated');
+            }, false);
+
+            // Smooth scrolling for all links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+    <!-- JavaScript for Scroll Progress -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const container = document.getElementById('timelineContainer');
+            const progressBar = document.getElementById('progressBar');
+            const items = document.querySelectorAll('.timeline-item');
+            const numbers = document.querySelectorAll('.timeline-number');
+
+            const rect = container.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // લાઇન ભરવાનું લોજિક (સેન્ટર વ્યુપોર્ટ મુજબ)
+            let progressHeight = (windowHeight / 2) - rect.top;
+            let totalHeight = rect.height;
+            let percentage = (progressHeight / totalHeight) * 100;
+
+            if (percentage < 0) percentage = 0;
+            if (percentage > 100) percentage = 100;
+
+            progressBar.style.height = percentage + "%";
+
+            // નંબર અને કાર્ડ એક્ટિવ કરવાનું લોજિક
+            items.forEach((item, index) => {
+                const itemRect = item.getBoundingClientRect();
+                if (itemRect.top < windowHeight / 2.5) {
+                    item.classList.add('active-item');
+                    numbers[index].classList.add('active');
+                } else {
+                    item.classList.remove('active-item');
+                    numbers[index].classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

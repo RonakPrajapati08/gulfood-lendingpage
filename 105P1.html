@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulfood 2027 | Luxury Exhibition Stand Builder</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Poppins -->  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-bg: #05070A;
+            --glass-bg: rgba(22, 27, 38, 0.75);
+            --electric-blue: #00D1FF;
+            --deep-blue: #007BFF;
+            --text-white: #FFFFFF;
+            --text-muted: #A0AEC0;
+            --border-glow: rgba(0, 209, 255, 0.3);
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* --- Hero Section Updated with Image --- */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, rgba(1, 1, 1, 0.2) 30%, rgba(1, 1, 1, 0.2) 100%),
+                url('./expo.webp');
+            background-size: cover;
+            background-position: center;
+            padding-top: 100px;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #fff, var(--electric-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* --- Updated Transparent Form Box Styling --- */
+        .hero-form-box {
+            background: transparent;
+            /* ટ્રાન્સપરન્ટ બેકગ્રાઉન્ડ */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            /* આછી સફેદ બોર્ડર */
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            /* થોડો બ્લર ઇફેક્ટ લખાણ વાંચવા માટે */
+        }
+
+        .hero-form-box h3,
+        .hero-form-box p,
+        .hero-form-box label {
+            color: #FFFFFF !important;
+            /* બધું લખાણ સફેદ */
+        }
+
+        .form-control-custom {
+            background: rgba(255, 255, 255, 0.1);
+            /* ઇનપુટ બોક્સ આછું સફેદ */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            /* બોર્ડર સફેદ */
+            color: white !important;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-control-custom::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            /* પ્લેસહોલ્ડર પણ સફેદ જેવું */
+        }
+
+        .form-control-custom:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--electric-blue);
+            box-shadow: none;
+        }
+
+        /* --- Global Custom Styles --- */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: 0.4s;
+        }
+
+        .glass-card:hover {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 30px var(--border-glow);
+            transform: translateY(-5px);
+        }
+
+        .btn-primary-custom {
+            background: var(--deep-blue);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--electric-blue);
+            box-shadow: 0 10px 20px rgba(0, 209, 255, 0.4);
+            color: #000;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--electric-blue);
+        }
+
+        footer {
+            background: #020305;
+            padding: 80px 0 20px;
+            border-top: 1px solid var(--border-glow);
+        }
+
+        /* --- About Styles --- */
+        /* Section Specific Styles */
+        .gulfood-exposure-section {
+            background-color: #F5F7FA;
+            font-family: 'Poppins', sans-serif;
+            padding: 80px 0;
+        }
+
+        .exposure-label {
+            color: #2563EB;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .exposure-heading {
+            color: #0F172A;
+            font-weight: 700;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .exposure-text {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Content Area Styles */
+        .exposure-card-main {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .exposure-img {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Stats Cards Styles */
+        .stat-card {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 25px 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            height: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 28px;
+            color: #2563EB;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2563EB;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        /* Value Points Styles */
+        .value-point {
+            display: flex;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .value-icon {
+            color: #22C55E;
+            /* Secondary Green Accent */
+            font-size: 18px;
+            margin-right: 12px;
+            margin-top: 3px;
+        }
+
+        .value-title {
+            font-weight: 600;
+            color: #0F172A;
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        /* --- Wave Styling --- */
+        .why-wizard-section {
+            position: relative;
+            background: #05070a;
+            /* Base dark color */
+            padding: 160px 0;
+            /* Content ને wave થી દૂર રાખવા padding વધાર્યું છે */
+            margin-top: -1px;
+            /* Gap કાઢવા માટે */
+        }
+
+        /* Wave Containers */
+        .wave-container {
+            position: absolute;
+            width: 100%;
+            line-height: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .wave-top {
+            top: 0;
+        }
+
+        .wave-bottom {
+            bottom: 0;
+            transform: rotate(180deg);
+            /* નીચેની બાજુ ઉલટું કરવા માટે */
+        }
+
+        .wave-container svg {
+            position: relative;
+            display: block;
+            /* width: calc(100% + 1.3px); */
+            width: 100%;
+            height: 100px;
+            /* Wave ની ઉંચાઈ અહિયાંથી બદલી શકાય */
+        }
+
+        /* Wave નો કલર સેક્શન ના બેકગ્રાઉન્ડ જેવો જ રાખવો */
+        .wave-container .shape-fill {
+            fill: #f5f7fa;
+        }
+
+
+        /* Smooth Moving BG Blob */
+        .smooth-bg-blob {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            /* width: 600px; */
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 209, 255, 0.08) 0%, transparent 70%);
+            transform: translateX(-50%);
+            filter: blur(80px);
+            z-index: 0;
+        }
+
+        .timeline-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-50%);
+        }
+
+        /* Filling color of line */
+        .timeline-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--scroll-height, 0%);
+            background: var(--electric-blue);
+            box-shadow: 0 0 15px var(--electric-blue);
+            transition: height 0.1s linear;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45px;
+            height: 45px;
+            background: #111;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            z-index: 10;
+            transition: 0.4s;
+        }
+
+        .timeline-item.active-dot .timeline-dot {
+            background: var(--electric-blue);
+            color: #000;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 20px rgba(0, 209, 255, 0.5);
+        }
+
+        /* Card and Image Styling */
+        .card-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.4s;
+        }
+
+        .wizard-img {
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: 0.5s;
+            filter: grayscale(30%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item:hover .wizard-img {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+            border-color: var(--electric-blue);
+        }
+
+        .step-label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: var(--electric-blue);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Flip Padding for alternate sides */
+        .timeline-item.left .row {
+            padding-right: 40px;
+        }
+
+        .timeline-item.right .row {
+            padding-left: 40px;
+        }
+
+        /* --- Event Stay Section Styling --- */
+        .stay-section {
+            position: relative;
+            padding: 100px 0;
+            /* ઉપરના વેવ સાથે સેટ કરવા માટે */
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .stay-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(5, 7, 10, 0.95) 0%, rgba(5, 7, 10, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1400');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .stay-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+
+        .stay-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 209, 255, 0.2);
+        }
+
+        .stay-icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--electric-blue), #0077ff);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(0, 209, 255, 0.3);
+        }
+
+        .stay-card h4 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .stay-card p {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .stay-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .stay-card ul li {
+            color: #d1d1d1;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .stay-card ul li i {
+            color: var(--electric-blue);
+            margin-right: 10px;
+            font-size: 12px;
+        }
+
+        /* Badge for trust */
+        .trust-badge {
+            background: rgba(0, 209, 255, 0.1);
+            color: var(--electric-blue);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 0px;
+                transform: none;
+            }
+
+            .timeline-item {
+                margin-bottom: 50px;
+            }
+
+            .timeline-item .row {
+                padding-left: 50px !important;
+                padding-right: 0 !important;
+            }
+
+            .timeline-img-box {
+                margin-top: 20px;
+            }
+
+            .wave-container svg {
+                height: 50px;
+            }
+
+            .why-wizard-section {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .exposure-heading {
+                font-size: 26px;
+            }
+
+            .gulfood-exposure-section {
+                padding: 50px 0;
+            }
+
+            .stat-card {
+                margin-bottom: 15px;
+            }
+        }
+
+
+        @media (max-width: 991px) {
+            .hero-content h1 {
+                font-size: 3rem;
+                text-align: center;
+            }
+
+            .hero-content {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .hero-section {
+                background: linear-gradient(rgba(5, 7, 10, 0.2), rgba(5, 7, 10, 0.2)), url('./expo.webp');
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="row align-items-center">
+                <!-- Left Side: Content -->
+                <div class="col-lg-7 hero-content text-start" data-aos="fade-right">
+                    <h6 class="text-uppercase mb-3 fw-bold" style="letter-spacing: 4px; color: var(--electric-blue);">
+                        Award Winning Stand Builder</h6>
+                    <h1>GULFOOD <br><span>DUBAI 2027</span></h1>
+                    <p class="lead text-light opacity-75 mb-5" style="max-width: 600px;">
+                        Make a massive impact at the world's largest food & beverage event. We design bespoke, high-end
+                        exhibition stands that drive engagement and sales.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#about" class="btn btn-primary-custom">Get Started</a>
+                        <a href="#" class="btn btn-outline-light rounded-pill px-4 py-3 border-2">View 2024 Gallery</a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Registration Form (Transparent with White Text) -->
+                <div class="col-lg-5 mt-5 mt-lg-0" data-aos="fade-left">
+                    <div class="hero-form-box text-start">
+                        <h3 class="fw-bold mb-2">Register for Gulfood</h3>
+                        <p class="mb-4 opacity-75 small">Book your premium exhibition stand consultation today.</p>
+
+                        <form action="#">
+                            <div class="mb-3">
+                                <label class="small mb-2">Contact Number</label>
+                                <input type="tel" class="form-control form-control-custom"
+                                    placeholder="Enter Your Phone Number" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary-custom w-100 py-3">Register Now</button>
+                        </form>
+
+                        <p class="mt-3 small text-center opacity-75">Secure your space for 2027.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="gulfood-exposure-section">
+        <div class="container">
+            <!-- 1. Section Header -->
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <span class="exposure-label" data-aos="fade-up">Global Exposure & Trade Opportunities</span>
+                    <h2 class="exposure-heading" data-aos="fade-up" data-aos-delay="100">Gulfood Trade Fair – Expanding
+                        Your Global Business Reach</h2>
+                    <p class="exposure-text" data-aos="fade-up" data-aos-delay="200">
+                        Gulfood is not just an exhibition; it is the ultimate gateway for global trade. We help you
+                        showcase your brand to international decision-makers and expand your business horizons across
+                        borders.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Content Area (2 Column) -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="./12.svg" alt="Exhibition Global Reach" class="exposure-img">
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <div class="exposure-card-main">
+                        <h4 class="fw-bold mb-3" style="color: #0F172A;">The Strategic Importance of Gulfood</h4>
+                        <p class="exposure-text mb-4">
+                            Participating in Gulfood places your brand at the center of the world's most influential F&B
+                            sourcing hub. It is where global buyers and suppliers meet to sign massive contracts and
+                            explore export growth opportunities.
+                        </p>
+
+                        <!-- 4. Value Points -->
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <div class="value-point">
+                                    <i class="fas fa-check-circle value-icon"></i>
+                                    <p class="value-title">Direct access to verified global buyers</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <div class="value-point">
+                                    <i class="fas fa-check-circle value-icon"></i>
+                                    <p class="value-title">Strong B2B networking opportunities</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <div class="value-point">
+                                    <i class="fas fa-check-circle value-icon"></i>
+                                    <p class="value-title">Market trend & product insights</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <div class="value-point">
+                                    <i class="fas fa-check-circle value-icon"></i>
+                                    <p class="value-title">Long-term export & brand growth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Stats Info Cards Grid -->
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-card">
+                        <i class="fas fa-globe-americas stat-icon"></i>
+                        <span class="stat-number">195+</span>
+                        <span class="stat-label">Countries Participating</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-card">
+                        <i class="fas fa-briefcase stat-icon"></i>
+                        <span class="stat-number">5,000+</span>
+                        <span class="stat-label">Global Exhibitors</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-card">
+                        <i class="fas fa-users stat-icon"></i>
+                        <span class="stat-number">100,000+</span>
+                        <span class="stat-label">Trade Visitors</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-card">
+                        <i class="fas fa-boxes stat-icon"></i>
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Product Categories</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gulfood Trade Exposure Section End -->
+
+    <!-- Why Visit With Us Section (Modern Wizard with Images) -->
+    <section id="why" class="why-wizard-section py-5">
+
+        <!-- TOP WAVE (ઈમેજ મુજબ) -->
+        <div class="wave-container wave-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <!-- Smooth Premium Gradient Background Shapes -->
+        <div class="smooth-bg-blob"></div>
+
+        <div class="container py-5 position-relative">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h6 class="text-primary fw-bold text-uppercase tracking-wider">Your Journey</h6>
+                <h2 class="text-white">Why Visit <span>Gulfood</span> With Us?</h2>
+                <p class="text-muted">A premium, end-to-end experience designed for global trade leaders.</p>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Central Vertical Line -->
+                <div class="timeline-line"></div>
+
+                <!-- Step 1 (Text Right, Image Left) -->
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-dot">01</div>
+                    <div class="row align-items-center w-100">
+                        <div class="col-md-6 order-2 order-md-1 timeline-img-box">
+                            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=500"
+                                alt="Management" class="img-fluid wizard-img">
+                        </div>
+                        <div class="col-md-6 order-1 order-md-2">
+                            <div class="timeline-content card-glass">
+                                <span class="step-label">MANAGEMENT</span>
+                                <h4>End-to-End Visit Management</h4>
+                                <p>We handle your visa assistance, flight coordination, and luxury hotel bookings
+                                    seamlessly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 (Text Left, Image Right) -->
+                <div class="timeline-item left" data-aos="fade-up">
+                    <div class="timeline-dot">02</div>
+                    <div class="row align-items-center w-100">
+                        <div class="col-md-6">
+                            <div class="timeline-content card-glass">
+                                <span class="step-label">NETWORKING</span>
+                                <h4>Verified Business Networking</h4>
+                                <p>Exclusive access to B2B matchmaking and private VIP networking lounges during the
+                                    event.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 timeline-img-box text-center">
+                            <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=500"
+                                alt="Networking" class="img-fluid wizard-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 (Text Right, Image Left) -->
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-dot">03</div>
+                    <div class="row align-items-center w-100">
+                        <div class="col-md-6 order-2 order-md-1 timeline-img-box">
+                            <img src="https://images.unsplash.com/photo-1582653291997-079a1c04e5a1?q=80&w=500"
+                                alt="Dubai Support" class="img-fluid wizard-img">
+                        </div>
+                        <div class="col-md-6 order-1 order-md-2">
+                            <div class="timeline-content card-glass">
+                                <span class="step-label">LOCAL TEAM</span>
+                                <h4>Local Dubai Team Support</h4>
+                                <p>Our on-ground specialists are available 24/7 in Dubai to handle any local
+                                    requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 (Text Left, Image Right) -->
+                <div class="timeline-item left" data-aos="fade-up">
+                    <div class="timeline-dot">04</div>
+                    <div class="row align-items-center w-100">
+                        <div class="col-md-6">
+                            <div class="timeline-content card-glass">
+                                <span class="step-label">TRANSPARENCY</span>
+                                <h4>Transparent Pricing</h4>
+                                <p>Clear, itemized billing with no hidden fees, ensuring your business budget is
+                                    respected.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 timeline-img-box text-center">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=500"
+                                alt="Pricing" class="img-fluid wizard-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 (Text Right, Image Left) -->
+                <div class="timeline-item right" data-aos="fade-up">
+                    <div class="timeline-dot">05</div>
+                    <div class="row align-items-center w-100">
+                        <div class="col-md-6 order-2 order-md-1 timeline-img-box">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=500"
+                                alt="Security" class="img-fluid wizard-img">
+                        </div>
+                        <div class="col-md-6 order-1 order-md-2">
+                            <div class="timeline-content card-glass">
+                                <span class="step-label">SECURITY</span>
+                                <h4>Secure Payment & Registration</h4>
+                                <p>Highest standard of data encryption and official booth/visitor registrations
+                                    guaranteed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- BOTTOM WAVE -->
+        <!-- <div class="wave-container wave-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div> -->
+    </section>
+
+    <!-- Event Stay Section -->
+    <section id="stay" class="stay-section">
+        <div class="stay-bg-overlay"></div>
+
+        <div class="container position-relative z-index-1">
+
+            <div class="section-title text-center text-white mb-5" data-aos="fade-up">
+                <span class="trust-badge">Full Concierge Service</span>
+                <h2 class="display-5 fw-bold">Comprehensive <span style="color: var(--electric-blue);">Stay &
+                        Visit</span> Support</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">We manage every detail of your Dubai visit, so
+                    you can focus 100% on growing your business at Gulfood.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Service 1: Visa Assistance -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stay-card">
+                        <div class="stay-icon-box">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <h4>Visa Assistance</h4>
+                        <p>Hassle-free visa processing for international delegates and business owners.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Fast-track Processing</li>
+                            <li><i class="fas fa-check-circle"></i> Document Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2: Event Entry -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stay-card">
+                        <div class="stay-icon-box">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h4>Official Entry</h4>
+                        <p>Guaranteed badges and registration for the exhibition and exclusive seminars.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Pre-Registration</li>
+                            <li><i class="fas fa-check-circle"></i> Priority Access</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 3: Hotel Stay -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stay-card">
+                        <div class="stay-icon-box">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h4>Elite Hotel Stay</h4>
+                        <p>Premium 4-star and 5-star accommodations near DWTC for maximum convenience.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Near Exhibition Site</li>
+                            <li><i class="fas fa-check-circle"></i> Exclusive Rates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 4: Transport -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stay-card">
+                        <div class="stay-icon-box">
+                            <i class="fas fa-shuttle-van"></i>
+                        </div>
+                        <h4>Luxury Transport</h4>
+                        <p>VIP Airport transfers and scheduled shuttles between hotel and the event venue.</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Chauffeur Services</li>
+                            <li><i class="fas fa-check-circle"></i> 24/7 Availability</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Trust Factor Note -->
+            <div class="text-center mt-5" data-aos="fade-up">
+                <p class="text-white-50"><i class="fas fa-shield-alt text-primary me-2"></i> All bookings are managed by
+                    our Dubai-licensed travel partners.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container py-5">
+            <h2 class="text-center fw-bold mb-5">Trust <span>Builders</span></h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <div class="text-warning mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-muted small">"Exceptional design! Our booth at Gulfood was the talk of the hall."
+                        </p>
+                        <hr class="opacity-25">
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" width="40"
+                                class="rounded-circle me-3">
+                            <div>
+                                <h6 class="mb-0 small">Marcus V.</h6><small class="text-primary">Global Foods</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card border-primary">
+                        <div class="text-warning mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-muted small">"Professional, on-time, and high quality. Best builder in Dubai."
+                        </p>
+                        <hr class="opacity-25">
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/2.jpg" width="40"
+                                class="rounded-circle me-3">
+                            <div>
+                                <h6 class="mb-0 small">Elena R.</h6><small class="text-primary">Swiss Beverage</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card">
+                        <div class="text-warning mb-3"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-muted small">"Flawless execution. They handled everything from visa to build."
+                        </p>
+                        <hr class="opacity-25">
+                        <div class="d-flex align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/3.jpg" width="40"
+                                class="rounded-circle me-3">
+                            <div>
+                                <h6 class="mb-0 small">Rajesh K.</h6><small class="text-primary">Agro Export</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="fw-bold mb-4">GULF<span style="color: var(--electric-blue);">STANDS</span></h3>
+                    <p class="text-muted small">Bespoke exhibition stand construction and design in Dubai, UAE. Creating
+                        brand experiences since 2010.</p>
+                </div>
+                <div class="col-lg-4 text-lg-center">
+                    <h6 class="fw-bold mb-4">Connect With Us</h6>
+                    <div class="d-flex justify-content-lg-center gap-3">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i
+                                class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-4">Contact Info</h6>
+                    <p class="text-muted small mb-1"><i class="fas fa-envelope text-primary me-2"></i>
+                        sales@gulfstands.com</p>
+                    <p class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i> Business Bay,
+                        Dubai, UAE</p>
+                </div>
+            </div>
+            <hr class="mt-5 border-secondary opacity-25">
+            <p class="text-center text-muted small mt-4">© 2024 Gulf Stands Builder. Crafted with Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Change navbar bg on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = "rgba(5,7,10,0.95)";
+                nav.style.padding = "10px 0";
+            } else {
+                nav.style.background = "rgba(5,7,10,0.8)";
+                nav.style.padding = "20px 0";
+            }
+        });
+    </script>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const section = document.querySelector('.why-wizard-section');
+            const line = document.querySelector('.timeline-line');
+            const items = document.querySelectorAll('.timeline-item');
+
+            const rect = section.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Calculate how much of the section has been scrolled
+            let progress = (windowHeight / 2 - rect.top) / rect.height * 100;
+            progress = Math.max(0, Math.min(progress, 100));
+
+            // Apply progress to line height
+            line.style.setProperty('--scroll-height', `${progress}%`);
+
+            // Activate dots
+            items.forEach(item => {
+                const itemRect = item.getBoundingClientRect();
+                if (itemRect.top < windowHeight / 2) {
+                    item.classList.add('active-dot');
+                } else {
+                    item.classList.remove('active-dot');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
