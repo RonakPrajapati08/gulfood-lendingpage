@@ -23,10 +23,14 @@
     <style>
         :root {
             --primary-color: #6366F1;
-            --secondary-color: #14B8A6;
+            /* --secondary-color: #14B8A6; */
             --dark-gray: #1F2937;
             --bg-light: #F8FAFF;
             --white: #ffffff;
+            --dark-navy: #0F172A;
+            /* ઈમેજ મુજબનો ડાર્ક કલર */
+            --light-grey: #E2E8F0;
+            --text-muted: #64748B;
         }
 
         body {
@@ -136,17 +140,23 @@
             box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
         }
 
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            font-size: 24px;
+        /* ફક્ત આ 2 જ કસ્ટમ સ્ટાઇલ જરૂરી છે, બાકી બધું બુટસ્ટ્રેપ છે */
+        .bg-sticky-dubai {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+                url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600');
+            background-attachment: fixed;
+            /* ઈમેજને સ્ટીકી રાખવા માટે */
+            background-position: center;
+            background-size: cover;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .1) !important;
         }
 
         /* Benefits List */
@@ -162,7 +172,7 @@
         }
 
         .benefit-item i {
-            color: var(--secondary-color);
+            color: var(--dark-navy);
             margin-right: 15px;
             font-size: 20px;
         }
@@ -213,13 +223,6 @@
         /* Animation classes */
         .fade-up {
             animation: fadeUp 0.8s ease forwards;
-        }
-
-        :root {
-            --dark-navy: #0F172A;
-            /* ઈમેજ મુજબનો ડાર્ક કલર */
-            --light-grey: #E2E8F0;
-            --text-muted: #64748B;
         }
 
         .journey-section {
@@ -719,35 +722,194 @@
     </section>
 
     <!-- 5. EVENT VISIT & STAY DETAILS -->
+    <!-- 5. EVENT VISIT & STAY DETAILS -->
+    <section class="bg-sticky-dubai py-5">
+        <div class="container py-5">
+
+            <!-- Section Header -->
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <span
+                        class="badge bg-primary bg-opacity-10 text-primary fw-bold text-uppercase small px-3 py-2 rounded-pill mb-3 d-inline-block">
+                        Full Concierge Service
+                    </span>
+                    <h2 class="fw-bold text-dark mb-3">
+                        Comprehensive <span class="text-primary">Stay & Visit</span> Support
+                    </h2>
+                    <p class="text-muted">
+                        We manage every detail of your Dubai visit so you can focus on
+                        building strong business connections at Gulfood.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="row g-4 justify-content-center">
+
+                <!-- Visa Assistance -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 hover-lift">
+                        <div class="bg-primary bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center mb-4"
+                            style="width: 56px; height: 56px;">
+                            <i class="fas fa-passport text-primary fs-4"></i>
+                        </div>
+
+                        <h5 class="fw-bold mb-2">Visa Assistance</h5>
+                        <p class="text-muted small mb-3">
+                            Hassle-free visa processing for international delegates and
+                            business owners.
+                        </p>
+
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Fast-track Processing
+                            </li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Document Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Official Entry -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 hover-lift">
+                        <div class="bg-primary bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center mb-4"
+                            style="width: 56px; height: 56px;">
+                            <i class="fas fa-id-badge text-primary fs-4"></i>
+                        </div>
+
+                        <h5 class="fw-bold mb-2">Official Entry</h5>
+                        <p class="text-muted small mb-3">
+                            Guaranteed badges and registrations for exhibitions and
+                            exclusive seminars.
+                        </p>
+
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Pre-Registration</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Priority Access</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Elite Hotel Stay (Highlighted like image center card) -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow rounded-4 p-4 hover-lift border border-primary">
+                        <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center mb-4"
+                            style="width: 56px; height: 56px;">
+                            <i class="fas fa-hotel fs-4"></i>
+                        </div>
+
+                        <h5 class="fw-bold mb-2">Elite Hotel Stay</h5>
+                        <p class="text-muted small mb-3">
+                            Premium 4-star & 5-star accommodations near DWTC
+                            for maximum convenience.
+                        </p>
+
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Near Exhibition Site
+                            </li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>Exclusive Rates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Luxury Transport -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 hover-lift">
+                        <div class="bg-primary bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center mb-4"
+                            style="width: 56px; height: 56px;">
+                            <i class="fas fa-shuttle-van text-primary fs-4"></i>
+                        </div>
+
+                        <h5 class="fw-bold mb-2">Luxury Transport</h5>
+                        <p class="text-muted small mb-3">
+                            VIP airport transfers and scheduled shuttles between
+                            hotel and venue.
+                        </p>
+
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Chauffeur Services
+                            </li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>24/7 Availability</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Note -->
+            <!-- CTA: Register & Payment -->
+            <div class="text-center mt-5 mb-4">
+
+                <h4 class="fw-bold mb-3">
+                    Ready to Visit <span class="text-primary">Gulfood Dubai</span> With Us?
+                </h4>
+
+                <p class="text-muted mb-4">
+                    Limited slots available. Register now to secure your guided visit,
+                    hotel stay and VIP business access.
+                </p>
+
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#register" class="btn btn-primary btn-lg px-4 rounded-pill shadow-sm">
+                        <i class="fas fa-edit me-2"></i> Register Now
+                    </a>
+                </div>
+
+                <p class="small text-muted mt-3 mb-0">
+                    🔒 Secure payment • Instant confirmation • Dedicated support
+                </p>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- 9. TOUR PACKAGES -->
     <section>
         <div class="container">
+            <h2 class="text-center mb-5">Choose Your Experience</h2>
             <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="text-center p-4 border rounded-4 bg-white">
-                        <i class="fas fa-calendar-alt fa-2x text-primary mb-3"></i>
-                        <h6>Event</h6>
-                        <p class="mb-0 fw-bold">GulfFood 2027</p>
+                <div class="col-lg-4">
+                    <div class="feature-card pricing-card text-center">
+                        <h3>Starter Visit</h3>
+                        <p class="text-muted">Ideal for new explorers</p>
+                        <hr>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-2">Exhibition Entry Pass</li>
+                            <li class="mb-2">Group Guided Tour</li>
+                            <li class="mb-2">Market Overview Report</li>
+                        </ul>
+                        <a href="#register" class="btn btn-outline-primary w-100">Select Package</a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="text-center p-4 border rounded-4 bg-white">
-                        <i class="fas fa-map-marked-alt fa-2x text-primary mb-3"></i>
-                        <h6>Location</h6>
-                        <p class="mb-0 fw-bold">DWTC, Dubai</p>
+                <div class="col-lg-4">
+                    <div class="feature-card pricing-card featured text-center">
+                        <span class="badge bg-primary mb-2">MOST POPULAR</span>
+                        <h3>Business Growth</h3>
+                        <p class="text-muted">For expanding trade</p>
+                        <hr>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-2">VIP Entry & Lounge Access</li>
+                            <li class="mb-2">3 Pre-arranged B2B Meetings</li>
+                            <li class="mb-2">Product Sourcing Assistance</li>
+                            <li class="mb-2">Networking Dinner</li>
+                        </ul>
+                        <a href="#register" class="btn btn-primary-custom w-100">Select Package</a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="text-center p-4 border rounded-4 bg-white">
-                        <i class="fas fa-clock fa-2x text-primary mb-3"></i>
-                        <h6>Duration</h6>
-                        <p class="mb-0 fw-bold">5-Day Guided Visit</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="text-center p-4 border rounded-4 bg-white">
-                        <i class="fas fa-concierge-bell fa-2x text-primary mb-3"></i>
-                        <h6>Included</h6>
-                        <p class="mb-0 fw-bold">Entry & VIP Meetings</p>
+                <div class="col-lg-4">
+                    <div class="feature-card pricing-card text-center">
+                        <h3>Premium Trade Access</h3>
+                        <p class="text-muted">High-level partnership</p>
+                        <hr>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-2">Personal Trade Consultant</li>
+                            <li class="mb-2">Unlimited B2B Matchmaking</li>
+                            <li class="mb-2">Company Setup Consultation</li>
+                            <li class="mb-2">Private Chauffeur Service</li>
+                        </ul>
+                        <a href="#register" class="btn btn-outline-primary w-100">Select Package</a>
                     </div>
                 </div>
             </div>
@@ -853,57 +1015,6 @@
         </div>
     </section>
 
-    <!-- 9. TOUR PACKAGES -->
-    <section>
-        <div class="container">
-            <h2 class="text-center mb-5">Choose Your Experience</h2>
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="feature-card pricing-card text-center">
-                        <h3>Starter Visit</h3>
-                        <p class="text-muted">Ideal for new explorers</p>
-                        <hr>
-                        <ul class="list-unstyled mb-5">
-                            <li class="mb-2">Exhibition Entry Pass</li>
-                            <li class="mb-2">Group Guided Tour</li>
-                            <li class="mb-2">Market Overview Report</li>
-                        </ul>
-                        <a href="#register" class="btn btn-outline-primary w-100">Select Package</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="feature-card pricing-card featured text-center">
-                        <span class="badge bg-primary mb-2">MOST POPULAR</span>
-                        <h3>Business Growth</h3>
-                        <p class="text-muted">For expanding trade</p>
-                        <hr>
-                        <ul class="list-unstyled mb-5">
-                            <li class="mb-2">VIP Entry & Lounge Access</li>
-                            <li class="mb-2">3 Pre-arranged B2B Meetings</li>
-                            <li class="mb-2">Product Sourcing Assistance</li>
-                            <li class="mb-2">Networking Dinner</li>
-                        </ul>
-                        <a href="#register" class="btn btn-primary-custom w-100">Select Package</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="feature-card pricing-card text-center">
-                        <h3>Premium Trade Access</h3>
-                        <p class="text-muted">High-level partnership</p>
-                        <hr>
-                        <ul class="list-unstyled mb-5">
-                            <li class="mb-2">Personal Trade Consultant</li>
-                            <li class="mb-2">Unlimited B2B Matchmaking</li>
-                            <li class="mb-2">Company Setup Consultation</li>
-                            <li class="mb-2">Private Chauffeur Service</li>
-                        </ul>
-                        <a href="#register" class="btn btn-outline-primary w-100">Select Package</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- 10. QUICK REGISTRATION SECTION -->
     <section id="register" class="bg-white">
         <div class="container">
@@ -958,7 +1069,7 @@
     </section>
 
     <!-- 11. FINAL CTA SECTION -->
-    <section class="py-5" style="background-color: var(--dark-gray);">
+    <section class="py-5" style="background-color: var(--dark-navy);">
         <div class="container text-center py-5">
             <h2 class="text-white display-5 mb-4">Turn GulfFood 2027 into Your Global Business Breakthrough</h2>
             <a href="#register" class="btn btn-secondary-custom btn-lg px-5 py-3">Register Now</a>
