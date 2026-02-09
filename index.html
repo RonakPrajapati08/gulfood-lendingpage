@@ -16,6 +16,8 @@
     <!-- 
     CSS STYLES - To be placed in your <head> or at the top of the body 
 -->
+    <!-- Swiper CSS & FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -242,7 +244,7 @@
         }
 
         .boutique-sub {
-            letter-spacing: 4px;
+            letter-spacing: 1px;
             font-size: 10px;
             text-transform: uppercase;
             color: var(--text-muted);
@@ -385,6 +387,208 @@
             line-height: 1.7;
         }
 
+        :root {
+            --accent-color: #C05621;
+            /* Orange from image */
+            --text-dark: #1A202C;
+        }
+
+        .travel-slider-section {
+            background-color: #fff;
+            padding: 80px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Slider Container */
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 100px;
+        }
+
+        .slide-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        /* Left Side Content Card */
+        .content-card {
+            background: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            flex: 1;
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2D3748;
+            margin-bottom: 10px;
+            display: inline-block;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .market-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .market-desc {
+            color: #4A5568;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        /* Right Side Image Stack */
+        .image-stack {
+            flex: 1;
+            position: relative;
+            height: 400px;
+        }
+
+        .img-main {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            transform: rotate(-5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        .img-overlay {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            transform: rotate(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border: 10px solid #fff;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            z-index: 2;
+        }
+
+        /* Navigation Arrows */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+            background: var(--accent-color);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Bottom Timeline Pagination */
+        .pagination-container {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 1000px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #E2E8F0;
+            z-index: 1;
+        }
+
+        .custom-pagination {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pag-bullet {
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #CBD5E0;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            transition: 0.3s;
+        }
+
+        .pag-bullet.active .dot {
+            background: var(--accent-color);
+            box-shadow: 0 0 0 5px rgba(192, 86, 33, 0.2);
+        }
+
+        .pag-num {
+            font-size: 14px;
+            font-weight: 600;
+            color: #718096;
+        }
+
+        .pag-bullet.active .pag-num {
+            color: var(--text-dark);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 991px) {
+            .slide-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image-stack {
+                height: 450px;
+                width: 100%;
+                margin-top: 40px;
+            }
+
+            .img-main,
+            .img-overlay {
+                position: relative;
+                width: 80%;
+                height: 250px;
+                transform: rotate(0);
+                margin: 0 auto;
+                display: block;
+            }
+
+            .img-overlay {
+                margin-top: -50px;
+                right: auto;
+                top: auto;
+            }
+
+            .content-card {
+                padding: 30px;
+            }
+        }
+
         @media (max-width: 1024px) {
 
             .timeline-card {
@@ -441,13 +645,13 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content text-center">
             <div class="row justify-content-center">
-                <div class="col-lg-9 fade-up">
+                <div class="col-lg-12 fade-up">
                     <span class="badge bg-info mb-3 px-3 py-2">Dubai • Feb 2027</span>
-                    <h1 class="display-3 mb-4">GulfFood 2027 Dubai – Your Gateway to Global Trade</h1>
-                    <p class="lead mb-5 opacity-90">Join us to explore the world’s largest food & beverage exhibition
-                        with expert export guidance, supplier meetings, and full Dubai tour support.</p>
+                    <h1 class="display-3 mb-4">GulFood Dubai 2027 <br /> Source of Reliable Foreign Buyers</h1>
+                    <p class="lead mb-5 opacity-90">Join us to Explore the World’s Largest Food & Beverage Exhibition
+                        with Experts Guidance, Buyer Meetings, and Full Dubai Tour Support.</p>
                     <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <a href="#register" class="btn btn-primary-custom btn-lg">Register for GulfFood Tour</a>
+                        <a href="#register" class="btn btn-primary-custom btn-lg">Register for GulFood Tour</a>
                         <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal"
                             data-bs-target="#videoModal">
                             <i class="fas fa-play-circle me-2"></i> Watch Event Video
@@ -464,7 +668,7 @@
             <div class="modal-content bg-dark">
                 <div class="modal-body p-0">
                     <div class="ratio ratio-16x9">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GulfFood Preview"
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="GulFood Preview"
                             allowfullscreen></iframe>
                     </div>
                 </div>
@@ -482,13 +686,14 @@
                     <span class="text-primary fw-bold small text-uppercase ls-2 d-block mb-2" data-aos="fade-up">
                         Global Exposure & Trade Opportunities
                     </span>
-                    <h2 class="text-dark-blue fw-bold mb-3 display-6" data-aos="fade-up" data-aos-delay="100">
-                        Gulfood Trade Fair – Expanding Your Global Business Reach
+                    <h2 class="text-dark-blue fw-bold mb-3 display-5" data-aos="fade-up" data-aos-delay="100">
+                        Gulfood Trade Fair 2027
                     </h2>
+                    <h5 class="mb-4">Expanding Your Global Business Reach</h5>
                     <p class="text-muted lh-lg mb-0" data-aos="fade-up" data-aos-delay="200">
-                        Gulfood is not just an exhibition; it is the ultimate gateway for global trade. We help you
-                        showcase your brand to international decision-makers and expand your business horizons across
-                        borders.
+                        Gulfood Is More Than An Exhibition — It Is The World’s Most Powerful Gateway To Global Trade. We
+                        Position Your Brand In Front Of International Decision-Makers And Help You Unlock New Markets
+                        Beyond Borders.
                     </p>
                 </div>
             </div>
@@ -511,14 +716,14 @@
                             <div class="col-md-6">
                                 <div class="d-flex align-items-start">
                                     <i class="fas fa-check-circle text-success mt-1 me-2"></i>
-                                    <p class="fw-semibold text-dark-blue mb-0 small">Direct access to verified global
-                                        buyers</p>
+                                    <p class="fw-semibold text-dark-blue mb-0 small">Direct Connect to Global
+                                        Buyers</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex align-items-start">
                                     <i class="fas fa-check-circle text-success mt-1 me-2"></i>
-                                    <p class="fw-semibold text-dark-blue mb-0 small">Strong B2B networking opportunities
+                                    <p class="fw-semibold text-dark-blue mb-0 small">Strong B2B Networking
                                     </p>
                                 </div>
                             </div>
@@ -531,7 +736,7 @@
                             <div class="col-md-6">
                                 <div class="d-flex align-items-start">
                                     <i class="fas fa-check-circle text-success mt-1 me-2"></i>
-                                    <p class="fw-semibold text-dark-blue mb-0 small">Long-term export & brand growth</p>
+                                    <p class="fw-semibold text-dark-blue mb-0 small">Long-Term Export Growth</p>
                                 </div>
                             </div>
                         </div>
@@ -581,8 +786,8 @@
                 <h6 class="text-primary fw-bold text-uppercase tracking-wider">Your Business Journey</h6>
                 <h2 class="boutique-heading">Why Visit Gulfood 2027 With Us?</h2>
                 <p class="boutique-sub">
-                    A guided export–import experience designed to convert global opportunities into real business
-                    growth.
+                    We deliver a strategic experience that converts global opportunities into measurable, into
+                    profitable, long-term partnerships with Enjoyment
                 </p>
             </div>
 
@@ -600,8 +805,9 @@
                         <span class="timeline-label">GLOBAL EXPOSURE</span>
                         <h4 class="timeline-title">International Market Exposure</h4>
                         <p class="text-muted small mb-0">
-                            Explore the world’s largest food and beverage exhibition and connect with global brands,
-                            manufacturers, and buyers from over 120 countries at Gulfood Dubai.
+                            Access The World’s Largest F&B Platform At Gulfood Dubai And Connect With Global Brands,
+                            Manufacturers, And Buyers From 120+ Countries — Supported By Our Strong On-Ground Business
+                            Network In Dubai.
                         </p>
                     </div>
                 </div>
@@ -617,8 +823,8 @@
                         <span class="timeline-label">SUPPLIER TRUST</span>
                         <h4 class="timeline-title">Verified Global Suppliers</h4>
                         <p class="text-muted small mb-0">
-                            Meet genuine, pre-verified international manufacturers and exporters suitable for
-                            import, export, distribution, and private-label business opportunities.
+                            Meet Genuine, Pre-Verified International Manufacturers And Exporters Suitable For Import,
+                            Export, Distribution, And Private-Label Business Opportunities.
                         </p>
                     </div>
                 </div>
@@ -634,8 +840,8 @@
                         <span class="timeline-label">EXPORT STRATEGY</span>
                         <h4 class="timeline-title">Product & Market Guidance</h4>
                         <p class="text-muted small mb-0">
-                            Our export experts help you identify high-demand products, target markets,
-                            pricing strategies, and packaging standards before you finalize deals.
+                            Our Experts Help You Identify High-Demand Products, Target Markets, Pricing Strategies, And
+                            Packaging Standards Before You Finalize Deals.
                         </p>
                     </div>
                 </div>
@@ -651,8 +857,8 @@
                         <span class="timeline-label">ON-GROUND SUPPORT</span>
                         <h4 class="timeline-title">Complete Dubai On-Ground Support</h4>
                         <p class="text-muted small mb-0">
-                            From airport pickup and exhibition guidance to translators and local coordination,
-                            our team ensures a smooth and stress-free Gulfood visit.
+                            From Airport Pickup And Exhibition Guidance To Translators And Local Coordination, Our Team
+                            Ensures A Smooth And Stress-Free Gulfood Visit.
                         </p>
                     </div>
                 </div>
@@ -668,8 +874,8 @@
                         <span class="timeline-label">NETWORKING</span>
                         <h4 class="timeline-title">High-Value Business Networking</h4>
                         <p class="text-muted small mb-0">
-                            Build strong relationships with international buyers, distributors,
-                            and exporters through focused B2B meetings and networking opportunities.
+                            Build Strong Relationships With International Buyers, Distributors, And Exporters Through
+                            Focused B2B Meetings And Networking Opportunities.
                         </p>
                     </div>
                 </div>
@@ -685,8 +891,8 @@
                         <span class="timeline-label">POST EVENT</span>
                         <h4 class="timeline-title">Long-Term Export Support</h4>
                         <p class="text-muted small mb-0">
-                            Even after Gulfood, we assist you with follow-ups, negotiations,
-                            export documentation, logistics planning, and shipment execution.
+                            Even After Gulfood, We Assist You With Follow-Ups, Negotiations, Export Documentation,
+                            Logistics Planning, And Shipment Execution.
                         </p>
                     </div>
                 </div>
@@ -699,19 +905,28 @@
     <!-- 4. WHAT YOU WILL GAIN -->
     <section class="benefits-section">
         <div class="container">
+            <div>
+                <h2 class="text-dark-blue fw-bold mb-3 mb-3 display-5" data-aos="fade-up" data-aos-delay="100">
+                    Does Visiting Gulfood Help Grow Your Export Business?
+                </h2>
+            </div>
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <h2 class="mb-4">Unlock New Business Horizons</h2>
-                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Meet global manufacturers & buyers
+                    <h4 class="mb-4 fw-bold">YES Because You can Unlock Global Trade Opportunities At Gulfood Dubai</h4>
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Connect Directly With Verified Global
+                        Manufacturers, Distributors & Buyers
                     </div>
-                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Discover trending food & FMCG products
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Discover High-Demand Food, Beverage &
+                        FMCG Products From International Markets
                     </div>
-                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Learn export pricing & packaging
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Gain Practical Insights On Export
+                        Pricing, Packaging & International Standards
                         standards</div>
-                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Understand global demand & compliance
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Understand Global Market Demand,
+                        Certifications & Trade Compliance
                     </div>
-                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Build international business
-                        connections</div>
+                    <div class="benefit-item"><i class="fas fa-arrow-right"></i> Build Long-Term International Business
+                        Relationships & Partnerships</div>
                 </div>
                 <div class="col-lg-7">
                     <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000"
@@ -721,7 +936,6 @@
         </div>
     </section>
 
-    <!-- 5. EVENT VISIT & STAY DETAILS -->
     <!-- 5. EVENT VISIT & STAY DETAILS -->
     <section class="bg-sticky-dubai py-5">
         <div class="container py-5">
@@ -819,16 +1033,17 @@
                             <i class="fas fa-shuttle-van text-primary fs-4"></i>
                         </div>
 
-                        <h5 class="fw-bold mb-2">Luxury Transport</h5>
+                        <h5 class="fw-bold mb-2">Smooth Transport</h5>
                         <p class="text-muted small mb-3">
-                            VIP airport transfers and scheduled shuttles between
-                            hotel and venue.
+                            Enjoy VIP Airport Transfers and Reliable Hotel-to-Venue Shuttles Designed for Comfort,
+                            Convenience, and On-Time Travel.
                         </p>
 
                         <ul class="list-unstyled small text-muted mb-0">
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Chauffeur Services
+                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>No Waiting, No
+                                Confusion
                             </li>
-                            <li><i class="fas fa-check-circle text-primary me-2"></i>24/7 Availability</li>
+                            <li><i class="fas fa-check-circle text-primary me-2"></i>On-time Hotel–Venue</li>
                         </ul>
                     </div>
                 </div>
@@ -865,56 +1080,128 @@
     </section>
 
 
-    <!-- 9. TOUR PACKAGES -->
-    <section>
+    <section class="travel-slider-section">
         <div class="container">
-            <h2 class="text-center mb-5">Choose Your Experience</h2>
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="feature-card pricing-card text-center">
-                        <h3>Starter Visit</h3>
-                        <p class="text-muted">Ideal for new explorers</p>
-                        <hr>
-                        <ul class="list-unstyled mb-5">
-                            <li class="mb-2">Exhibition Entry Pass</li>
-                            <li class="mb-2">Group Guided Tour</li>
-                            <li class="mb-2">Market Overview Report</li>
-                        </ul>
-                        <a href="#register" class="btn btn-outline-primary w-100">Select Package</a>
+            <!-- Main Heading -->
+            <h2 class="fw-bold mb-5" style="font-size: 36px; color: var(--text-dark);">Explore Beyond Gulfood:</h2>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <!-- Slide 1: Al Aweer -->
+                    <div class="swiper-slide">
+                        <div class="slide-wrapper">
+                            <div class="content-card">
+                                <span class="step-number">01</span>
+                                <h3 class="market-title">Al Aweer Central Market</h3>
+                                <p class="market-desc">
+                                    Dubai’s largest bulk sourcing hub for food & FMCG buyers. Along with history, we
+                                    introduce you to direct wholesalers for price comparison, private labeling, and
+                                    regional demand insights.
+                                </p>
+                            </div>
+                            <div class="image-stack">
+                                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800"
+                                    class="img-main" alt="Al Aweer">
+                                <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800"
+                                    class="img-overlay" alt="Market Detail">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="feature-card pricing-card featured text-center">
-                        <span class="badge bg-primary mb-2">MOST POPULAR</span>
-                        <h3>Business Growth</h3>
-                        <p class="text-muted">For expanding trade</p>
-                        <hr>
-                        <ul class="list-unstyled mb-5">
-                            <li class="mb-2">VIP Entry & Lounge Access</li>
-                            <li class="mb-2">3 Pre-arranged B2B Meetings</li>
-                            <li class="mb-2">Product Sourcing Assistance</li>
-                            <li class="mb-2">Networking Dinner</li>
-                        </ul>
-                        <a href="#register" class="btn btn-primary-custom w-100">Select Package</a>
+
+                    <!-- Slide 2: Al Ras -->
+                    <div class="swiper-slide">
+                        <div class="slide-wrapper">
+                            <div class="content-card">
+                                <span class="step-number">02</span>
+                                <h3 class="market-title">Al Ras Trading Zone</h3>
+                                <p class="market-desc">
+                                    The heart of Dubai’s import–export trading community. Here, international traders
+                                    close real wholesale deals and explore cross-border expansion opportunities.
+                                </p>
+                            </div>
+                            <div class="image-stack">
+                                <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800"
+                                    class="img-main" alt="Al Ras">
+                                <img src="https://images.unsplash.com/photo-1582653280643-e395af3d2733?w=800"
+                                    class="img-overlay" alt="Market Detail">
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Slide 3: Murshid Bazar -->
+                    <div class="swiper-slide">
+                        <div class="slide-wrapper">
+                            <div class="content-card">
+                                <span class="step-number">03</span>
+                                <h3 class="market-title">Murshid Bazar Hub</h3>
+                                <p class="market-desc">
+                                    A hidden powerhouse for FMCG and commodity buyers, trusted by African and Asian
+                                    importers. Perfect for high-volume, low-margin export-focused businesses.
+                                </p>
+                            </div>
+                            <div class="image-stack">
+                                <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800"
+                                    class="img-main" alt="Murshid Bazar">
+                                <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800"
+                                    class="img-overlay" alt="Market Detail">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-lg-4">
-                    <div class="feature-card pricing-card text-center">
-                        <h3>Premium Trade Access</h3>
-                        <p class="text-muted">High-level partnership</p>
-                        <hr>
-                        <ul class="list-unstyled mb-5">
-                            <li class="mb-2">Personal Trade Consultant</li>
-                            <li class="mb-2">Unlimited B2B Matchmaking</li>
-                            <li class="mb-2">Company Setup Consultation</li>
-                            <li class="mb-2">Private Chauffeur Service</li>
-                        </ul>
-                        <a href="#register" class="btn btn-outline-primary w-100">Select Package</a>
+
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+                <!-- Custom Pagination -->
+                <div class="pagination-container">
+                    <div class="timeline-line"></div>
+                    <div class="custom-pagination">
+                        <div class="pag-bullet active" onclick="goToSlide(0)">
+                            <div class="dot"></div>
+                            <div class="pag-num">01</div>
+                        </div>
+                        <div class="pag-bullet" onclick="goToSlide(1)">
+                            <div class="dot"></div>
+                            <div class="pag-num">02</div>
+                        </div>
+                        <div class="pag-bullet" onclick="goToSlide(2)">
+                            <div class="dot"></div>
+                            <div class="pag-num">03</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            speed: 800,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            on: {
+                slideChange: function () {
+                    let bullets = document.querySelectorAll('.pag-bullet');
+                    bullets.forEach(b => b.classList.remove('active'));
+                    bullets[this.realIndex].classList.add('active');
+                }
+            }
+        });
+
+        function goToSlide(index) {
+            swiper.slideToLoop(index);
+        }
+    </script>
+
 
     <!-- 6. IMAGE GALLERY -->
     <section class="bg-white">
@@ -948,10 +1235,10 @@
                 <div class="col-md-4">
                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
                         <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Inside GulfFood"></iframe>
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Inside GulFood"></iframe>
                         </div>
                         <div class="p-3">
-                            <h6>Inside GulfFood Exhibition</h6>
+                            <h6>Inside GulFood Exhibition</h6>
                         </div>
                     </div>
                 </div>
@@ -1022,7 +1309,7 @@
                 <div class="col-lg-7">
                     <div class="feature-card shadow p-5">
                         <div class="text-center mb-4">
-                            <h2 class="mb-2">Reserve My GulfFood Visit</h2>
+                            <h2 class="mb-2">Reserve My GulFood Visit</h2>
                             <p class="text-danger fw-bold">Limited Seats Available for 2027 Mission</p>
                         </div>
                         <form id="registrationForm" class="needs-validation" novalidate>
@@ -1055,7 +1342,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12 mt-4">
-                                    <button type="submit" class="btn btn-primary-custom w-100 py-3">Reserve My GulfFood
+                                    <button type="submit" class="btn btn-primary-custom w-100 py-3">Reserve My GulFood
                                         Visit</button>
                                     <p class="text-center mt-3 small text-muted"><i class="fas fa-shield-alt me-1"></i>
                                         Your data is secure and will be handled by our expert consultants.</p>
@@ -1071,7 +1358,7 @@
     <!-- 11. FINAL CTA SECTION -->
     <section class="py-5" style="background-color: var(--dark-navy);">
         <div class="container text-center py-5">
-            <h2 class="text-white display-5 mb-4">Turn GulfFood 2027 into Your Global Business Breakthrough</h2>
+            <h2 class="text-white display-5 mb-4">Turn GulFood 2027 into Your Global Business Breakthrough</h2>
             <a href="#register" class="btn btn-secondary-custom btn-lg px-5 py-3">Register Now</a>
         </div>
     </section>
